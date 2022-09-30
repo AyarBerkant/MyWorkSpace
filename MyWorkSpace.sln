@@ -5,7 +5,11 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Join Example", "Join Example\Join Example.csproj", "{4DB90589-D2D3-421C-AF3F-0C654C1722FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestQRGenerator", "TestQRGenerator\TestQRGenerator.csproj", "{48C987D5-4395-4312-BB72-221AA6528E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestQRGenerator", "TestQRGenerator\TestQRGenerator.csproj", "{48C987D5-4395-4312-BB72-221AA6528E0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "TestBerk\Tester.csproj", "{C9A42A25-1DE7-4291-A271-EAC1BE264707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuhasebeX", "MuhasebeX\MuhasebeX.csproj", "{91F62A13-B097-48A0-900A-E8AD421E7B5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{48C987D5-4395-4312-BB72-221AA6528E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48C987D5-4395-4312-BB72-221AA6528E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48C987D5-4395-4312-BB72-221AA6528E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A42A25-1DE7-4291-A271-EAC1BE264707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A42A25-1DE7-4291-A271-EAC1BE264707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A42A25-1DE7-4291-A271-EAC1BE264707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A42A25-1DE7-4291-A271-EAC1BE264707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F62A13-B097-48A0-900A-E8AD421E7B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F62A13-B097-48A0-900A-E8AD421E7B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F62A13-B097-48A0-900A-E8AD421E7B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F62A13-B097-48A0-900A-E8AD421E7B5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
