@@ -26,9 +26,27 @@ namespace Tester
 
             //#endregion
 
-            string x = "ÖöUüIİiı";
-            x = x.ToLower();
-            Console.WriteLine(x);
+            string x = "TK123AS67";
+            var x2 = x.Substring(2, 7);
+            Console.WriteLine(x2);
+
+            bool SayiMi(string text)
+            {
+                foreach (char chr in text)
+                {
+                    if (!Char.IsNumber(chr)) return false;
+                }
+                return true;
+            }
+
+            bool sonuc = SayiMi(x2);
+
+            if (sonuc==false)
+            {
+                Console.WriteLine("HATAXX");
+            }
+
+
 
         }
 
