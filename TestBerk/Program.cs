@@ -8,7 +8,7 @@ namespace Tester
     {
         static void Main(string[] args)
         {
-            //#region Task #5012 Hastane Yetkilisi - Mernis
+            #region Task #5012 Hastane Yetkilisi - Mernis
 
             //string abc = "123456789";
             //string x = abc.Substring(0, 2);
@@ -24,39 +24,46 @@ namespace Tester
             //    Console.WriteLine("türk");
             //}
 
-            //#endregion
+            #endregion
 
-            string x = "TK123AS67";
-            var x2 = x.Substring(2, 7);
-            Console.WriteLine(x2);
+            #region Test 1.1 SubStr 
 
-            bool SayiMi(string text)
-            {
-                foreach (char chr in text)
-                {
-                    if (!Char.IsNumber(chr)) return false;
-                }
-                return true;
-            }
+            //string x = "TK123AS67";
+            //var x2 = x.Substring(2, 7);
+            //Console.WriteLine(x2);
 
-            bool sonuc = SayiMi(x2);
+            //bool SayiMi(string text)
+            //{
+            //    foreach (char chr in text)
+            //    {
+            //        if (!Char.IsNumber(chr)) return false;
+            //    }
+            //    return true;
+            //}
 
-            if (sonuc==false)
-            {
-                Console.WriteLine("HATAXX");
-            }
+            //bool sonuc = SayiMi(x2);
 
+            //if (sonuc == false)
+            //{
+            //    Console.WriteLine("HATAXX");
+            //}
 
+            #endregion
 
         }
 
-        public static string toUpper(string text)
-        {
-            return text.ToUpper();
-        }
-        public  string toLowerspecial( string text)
-        {
-            return text.ToLower();
-        }
+        #region Test 1.1 FuncMeth
+
+        //public static string toUpper(string text)
+        //{
+        //    return text.ToUpper();
+        //}
+        //public string toLowerspecial(string text)
+        //{
+        //    return text.ToLower();
+        //}
+
+        #endregion
+
     }   
 }
