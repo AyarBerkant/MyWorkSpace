@@ -251,27 +251,90 @@ namespace Tester
 
             #endregion
 
+            #region xx
+
+            //// Büyük CSV dosyasının yolu
+            //string buyukDosyaYolu = "C:\\Users\\Berkant AYAR\\Desktop\\IpCountry\\yeni-dosya8.CSV";
+
+            //// Yeni CSV dosyasının yolu
+            //string yeniDosyaYolu = "C:\\Users\\Berkant AYAR\\Desktop\\IpCountry\\yeni-dosya10.CSV";
 
 
-            // Büyük CSV dosyasının yolu
-            string buyukDosyaYolu = "C:\\Users\\Berkant AYAR\\Desktop\\IpCountry\\yeni-dosya8.CSV";
 
-            // Yeni CSV dosyasının yolu
-            string yeniDosyaYolu = "C:\\Users\\Berkant AYAR\\Desktop\\IpCountry\\yeni-dosya10.CSV";
+            //// CSV dosyasını oku
+            //var records = ReadCsv(buyukDosyaYolu);
+
+            //// İlk satırdaki belirli sütunlardaki değerleri değiştir
+            //ModifyFirstRow(records);
+
+            //// Değişiklikleri içeren dosyayı yaz
+            //WriteCsv(yeniDosyaYolu, records);
+
+            //Console.WriteLine("İşlem tamamlandı.");
+
+            #endregion
 
 
+            string csvFilePath = "C:\\Users\\Berkant AYAR\\Desktop\\xy\\Post11.csv";
 
-            // CSV dosyasını oku
-            var records = ReadCsv(buyukDosyaYolu);
+            // CSV dosyasındaki veriyi oku
+            List<string[]> rows = ReadCsvFile(csvFilePath);
 
-            // İlk satırdaki belirli sütunlardaki değerleri değiştir
-            ModifyFirstRow(records);
+            // <p> ifadesini içermeyen satırları filtrele ve yeni bir liste oluştur
+            List<string[]> filteredRows = FilterRows(rows);
 
-            // Değişiklikleri içeren dosyayı yaz
-            WriteCsv(yeniDosyaYolu, records);
+            // Yeni CSV dosyasına yaz
+            string newCsvFilePath = "C:\\Users\\Berkant AYAR\\Desktop\\xy\\new2.CSV";
+            WriteCsvFile(filteredRows, newCsvFilePath);
 
-            Console.WriteLine("İşlem tamamlandı.");
+            Console.WriteLine("İşlem tamamlandı. Yeni dosya: " + newCsvFilePath);
+
+            static List<string[]> ReadCsvFile(string filePath)
+            {
+                List<string[]> rows = new List<string[]>();
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        string[] values = line.Split(',');
+                        rows.Add(values);
+                    }
+                }
+                return rows;
+            }
+
+            static List<string[]> FilterRows(List<string[]> rows)
+            {
+                List<string[]> filteredRows = new List<string[]>();
+                // İlk satırı (başlık) direk ekleyelim
+                filteredRows.Add(rows.First());
+
+                // İlk sütundaki <p> ifadesi içermeyen satırları ekleyelim
+                foreach (var row in rows.Skip(2))
+                {
+                    if (!row[0].Contains("<p>"))
+                    {
+                        filteredRows.Add(row);
+                    }
+                }
+
+                return filteredRows;
+            }
+
+            static void WriteCsvFile(List<string[]> rows, string filePath)
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (var row in rows)
+                    {
+                        string line = string.Join(",", row);
+                        writer.WriteLine(line);
+                    }
+                }
+            }
         }
+
 
         static List<string[]> ReadCsv(string filePath)
         {
@@ -404,7 +467,7 @@ namespace Tester
 
 
         }
-   
+
         #region Test 1.1 FuncMeth
 
         public static string toUpper(string text)
